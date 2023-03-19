@@ -16,5 +16,7 @@ RUN mkdir -p static/audio
 # Copy the rest of the application code into the container
 COPY . .
 
+EXPOSE 5000
+
 # Set the default command to run when the container starts
-CMD ["flask", "run"]
+CMD ["flask", "run", "--host", "0.0.0.0"]
