@@ -24,4 +24,4 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
           
     - name: Push the Docker image
-      run: docker push wimukthinie/birdchirp-backend:$(date +%s)
+      run: docker push wimukthinie/birdchirp-backend:latest
