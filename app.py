@@ -191,27 +191,26 @@ def predictAnimal(audio_file):
         audio_file.save(file_path)
         audio = read_audio(file_path)
         class_prediction = model.predict(audio)
-        classes_x = np.argmax(class_prediction, axis=1)
+        classes_x = np.argmax(class_prediction, axis=1)[0]
         # 0 = Indian Peafowl
         # 1 = Greater Coucal
         # 2 = Indian Cuckoo
         # 3 = Asian Koel
         # 4 = Indian Cuckoo
         # 5 = Puff-throated Babbler
-        prediction_class = labelencoder.inverse_transform(classes_x)[0]
 
-        # if classes_x == 0:
-        #     label = "Indian Peafowl"
-        # elif classes_x == 1:
-        #     label = "Asian Koel"
-        # elif classes_x == 2:
-        #     label = "Indian Cuckoo"
-        # elif classes_x == 3:
-        #     label = "Greater Couca"
-        # elif classes_x == 4:
-        #     label = "Puff-throated Babbler"
-        # else:
-        #     label = "Unknown Class"
+        if classes_x == 0:
+            label = "Indian Peafowl"
+        elif classes_x == 1:
+            label = "Asian Koel"
+        elif classes_x == 2:
+            label = "Indian Cuckoo"
+        elif classes_x == 3:
+            label = "Greater Couca"
+        elif classes_x == 4:
+            label = "Puff-throated Babbler"
+        else:
+            label = "Unknown Class"
         return {
             "class": int(classes_x[0]),
             "prediction": prediction_class
