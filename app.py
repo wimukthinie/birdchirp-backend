@@ -214,7 +214,7 @@ def predictAnimal(audio_file):
         else:
             label = "Unknown Class"
         return {
-            "class": int(classes_x[0]),
+            "class": int(classes_x),
             "prediction": label
         }
     else:
