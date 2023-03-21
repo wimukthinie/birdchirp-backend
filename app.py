@@ -200,15 +200,19 @@ def predictAnimal(audio_file):
         # 5 = Puff-throated Babbler
 
         if classes_x == 0:
-            label = "Indian Peafowl"
-        elif classes_x == 1:
             label = "Asian Koel"
+        elif classes_x == 1:
+            label = "Greater Coucal"
         elif classes_x == 2:
             label = "Indian Cuckoo"
         elif classes_x == 3:
-            label = "Greater Couca"
+            label = "Indian Peafowl"
         elif classes_x == 4:
+            label = "Indian Cuckoo"
+        elif classes_x == 5:
             label = "Puff-throated Babbler"
+        else:
+            label = "Unknown Class"
         else:
             label = "Unknown Class"
         return {
