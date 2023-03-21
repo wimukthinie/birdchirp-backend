@@ -213,8 +213,6 @@ def predictAnimal(audio_file):
             label = "Puff-throated Babbler"
         else:
             label = "Unknown Class"
-        else:
-            label = "Unknown Class"
         return {
             "class": int(classes_x[0]),
             "prediction": label
