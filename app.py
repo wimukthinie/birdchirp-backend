@@ -10,6 +10,7 @@ import os
 import librosa
 
 app = Flask(__name__)
+# classification model
 model = load_model('birdchirp_voice_classification_model.hdf5')
 target_audio = os.path.join(os.getcwd(), 'static/audio')
 
